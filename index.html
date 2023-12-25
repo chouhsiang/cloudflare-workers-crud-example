@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<body>
+    <button onclick="myFunction()">新增</button> </br>
+    <div id="content"></div> </br>
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("content").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.open("GET", "/list", true);
+    xhr.send();
+
+    function myFunction() {
+            location.href = 'insert.html'
+      }
+
+  </script>
+</body>
